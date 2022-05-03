@@ -5,8 +5,6 @@ function TodoListComponent() {
   const [todos, setTodos] = useState([])
   const [nameOfTask, setnameOfTask] = useState('')
   
-  const url = `http://localhost:3001/todos`
-
   const addTodo = async () => {
 
     const task = {nameOfTask}
@@ -21,11 +19,12 @@ function TodoListComponent() {
     }
 
     const getTask =() => {
-      fetch(url).then(res => res.json()).then(data => setTodos(data))
+      fetch('http://localhost:3001/todos').then(res => res.json()).then(data => setTodos(data))
     }
-  useEffect(() => {
-    getTask()
-  }, [])
+
+    useEffect(() => {
+      getTask()
+    }, [])
   
 
   return (
