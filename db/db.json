@@ -15,14 +15,6 @@
     {
       "id": 4,
       "nameOfTask": "study nodeJS"
-    },
-    {
-      "nameOfTask": "amazing race",
-      "id": 5
-    },
-    {
-      "nameOfTask": "weee",
-      "id": 6
     }
   ]
 }
