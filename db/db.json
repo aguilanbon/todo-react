@@ -1,0 +1,28 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "nameOfTask": "study mongoDB"
+    },
+    {
+      "id": 2,
+      "nameOfTask": "study expressJS"
+    },
+    {
+      "id": 3,
+      "nameOfTask": "study reactJS"
+    },
+    {
+      "id": 4,
+      "nameOfTask": "study nodeJS"
+    },
+    {
+      "nameOfTask": "amazing race",
+      "id": 5
+    },
+    {
+      "nameOfTask": "weee",
+      "id": 6
+    }
+  ]
+}
