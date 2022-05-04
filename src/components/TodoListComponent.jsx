@@ -4,7 +4,7 @@ function TodoListComponent() {
 
   const [todos, setTodos] = useState([])
   const [nameOfTask, setnameOfTask] = useState('')
-  const [isChecked, setisChecked] = useState(true)
+  const [isChecked, setisChecked] = useState(null)
   
     const addTodo = async () => {
 
@@ -27,11 +27,10 @@ function TodoListComponent() {
 
       for(let todo of todos) {
         if(todo.id === parseInt(idNo)) {
-          setisChecked(!isChecked)
           await fetch(`http://localhost:3001/todos/${idNo}`, {
             method: 'PUT',
             headers: { "Content-type": "application/json" },
-            body: JSON.stringify({ id: todo.id, nameOfTask: todo.nameOfTask, isDone: isChecked })
+            body: JSON.stringify({ id: todo.id, nameOfTask: todo.nameOfTask, isDone: !todo.isDone })
           })
         }
       }
