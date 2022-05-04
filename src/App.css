@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@300;400;500&family=Poppins:wght@300;400;600&family=Source+Sans+Pro:wght@300;400&family=Ubuntu:wght@300;400;500&display=swap');
+
 .App {
   display: flex;
   flex-direction: column;
-  max-width: 30%;
+  max-width: 25%;
   margin: 3rem auto;
   height: auto; 
   background-color: white;
@@ -17,6 +19,8 @@
 h1 {
   font-size: 2em;
   margin-bottom: 1em;
+  font-family: 'Lobster', cursive;
+  color: #383e56;
 }
 
 .input-container {
@@ -24,7 +28,7 @@ h1 {
   flex-direction: row;
 }
 
-input {
+#textInput {
   width: 70%;
   border-radius: 5px;
 	border: 1px solid #84a9ac;
@@ -32,7 +36,7 @@ input {
 	font-family: 'Open Sans', sans-serif;
 }
 
-input:focus {
+#textInput:focus {
   outline: none !important;
 	border: 1px solid #f69e7b;
 }
@@ -45,6 +49,7 @@ button {
 	border-radius: 5px;
   cursor: pointer;
   margin-left: .25em;
+  font-family: 'Lobster', cursive;
 }
 
 button:hover {
@@ -54,14 +59,57 @@ button:hover {
 
 .todo-container {
   padding: 1em;
+  color: #383e56;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: .5em 0;
+}
+
+.left-col {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#todoCheckbox {
+  cursor: pointer;
+}
+
+.right-col {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: auto;
 }
 
 p {
-  padding: .5em 0;
+  font-size: .95em;
+  margin-left: .5em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
+#editSvg {
+  height: .75em;
+  cursor: pointer;
+  opacity: .8;
+}
+
+#delSvg {
+  height: .75em;
+  margin-left: 1em;
+  cursor: pointer;
+  opacity: .8;
 }
 
 @media only screen and (max-width: 768px) {
   .App {
     max-width: 60%;
+    font-size: .75em;
   }
 }

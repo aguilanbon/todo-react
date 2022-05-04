@@ -32,7 +32,7 @@ function TodoListComponent() {
       <div className='head-container'>
           <h1>Todo</h1>
         <div className="input-container">
-          <input type="text" value={nameOfTask} onChange={(e) => setnameOfTask(e.target.value)}/>
+          <input type="text" id='textInput' value={nameOfTask} onChange={(e) => setnameOfTask(e.target.value)}/>
           <button onClick={() => {
             addTodo()
           }}>add</button>
@@ -41,7 +41,14 @@ function TodoListComponent() {
       <div className="todo-container">
             {todos.map(todo => (
                 <div key={todo.id} className="todo-list">
+                  <div className="left-col">
+                    <input type="checkbox" name="" id="todoCheckbox" />
                     <p>{todo.nameOfTask}</p>
+                  </div>
+                  <div className="right-col">
+                      <img src="../edit.svg" alt="" id='editSvg'/>
+                      <img src="../del.svg" alt="" id='delSvg'/>
+                  </div>
                 </div>
             ))}
       </div>
