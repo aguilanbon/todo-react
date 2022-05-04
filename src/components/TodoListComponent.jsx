@@ -6,9 +6,7 @@ function TodoListComponent() {
   const [nameOfTask, setnameOfTask] = useState('')
   
     const addTodo = async () => {
-
       const task = {nameOfTask, isDone: false}
-
       await  fetch('http://localhost:3001/todos', {
           method: 'POST',
           headers: {"Content-type" : "application/json"},
@@ -43,6 +41,12 @@ function TodoListComponent() {
       getTask()
     }
 
+    const handleKeyPress = (e) => {
+      if(e.keyCode === 13) {
+        addTodo()
+      }
+    }
+
     const getTask = () => {
       fetch('http://localhost:3001/todos').then(res => res.json()).then(data => setTodos(data))
     }
@@ -57,7 +61,7 @@ function TodoListComponent() {
       <div className='head-container'>
           <h1>Todo App</h1>
         <div className="input-container">
-          <input type="text" id='textInput' placeholder='add new task...' value={nameOfTask} onChange={(e) => setnameOfTask(e.target.value)} onke/>
+          <input type="text" id='textInput' placeholder='add new task...' value={nameOfTask} onChange={(e) => setnameOfTask(e.target.value)} onKeyUp={handleKeyPress}/>
           <button onClick={() => {
             addTodo()
           }}>add</button>
