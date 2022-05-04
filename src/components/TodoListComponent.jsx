@@ -99,19 +99,17 @@ function TodoListComponent() {
               <div className="left-col">
                 {todo.isDone === true ?
                 <>
-                {/* <input type="checkbox" name="" id="todoCheckbox" value={todo.id} onChange={(e) => checkTask(e.target.value)} checked/> */}
-                <button className='done done-through' value={todo.id} onClick={(e) => checkTask(e.target.value)}>
-                  ✅
-                </button>
-                <p className='through'>{todo.nameOfTask}</p>
-                </>
+                  <button className='done done-through' value={todo.id} onClick={(e) => checkTask(e.target.value)}>
+                    ✅
+                  </button>
+                  <p className='through'>{todo.nameOfTask}</p>
+                  </>
                  : 
                 <>
-                {/* <input type="checkbox" name="" id="todoCheckbox" value={todo.id} onChange={(e) => checkTask(e.target.value)} /> */}
-                <button className='done' value={todo.id} onClick={(e) => checkTask(e.target.value)}>
-                  🕘
-                </button>
-                <p>{todo.nameOfTask}</p>
+                  <button className='done' value={todo.id} onClick={(e) => checkTask(e.target.value)}>
+                    🕘
+                  </button>
+                  <p>{todo.nameOfTask}</p>
                 </>
                  }
               </div>
