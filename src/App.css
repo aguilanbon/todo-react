@@ -94,6 +94,7 @@ p {
   margin-left: .5em;
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
+  padding-right: .5em;
 }
 
 #editSvg {

@@ -4,6 +4,8 @@ function TodoListComponent() {
 
   const [todos, setTodos] = useState([])
   const [nameOfTask, setnameOfTask] = useState('')
+  const [editId, setEditId] = useState('')
+  const [buttonText, setbuttonText] = useState('add')
   
     const addTodo = async () => {
       const task = {nameOfTask, isDone: false}
@@ -41,6 +43,30 @@ function TodoListComponent() {
       getTask()
     }
 
+    const getEdit = (idNo) => {
+      for(let todo of todos) {
+        if(todo.id === idNo) {
+          setnameOfTask(todo.nameOfTask)
+        }
+      }
+      setbuttonText('update')
+      setEditId(idNo)
+    }
+    
+    const editTask = async () => {
+      for(let todo of todos) {
+        if(todo.id === editId) {
+          await fetch(`http://localhost:3001/todos/${editId}`, {
+            method: 'PUT',
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify({ id: todo.id, nameOfTask: nameOfTask, isDone: todo.isDone })
+          })
+        }
+      }
+      setnameOfTask('')
+      getTask()
+    }
+
     const handleKeyPress = (e) => {
       if(e.keyCode === 13) {
         addTodo()
@@ -63,8 +89,8 @@ function TodoListComponent() {
         <div className="input-container">
           <input type="text" id='textInput' placeholder='add new task...' value={nameOfTask} onChange={(e) => setnameOfTask(e.target.value)} onKeyUp={handleKeyPress}/>
           <button onClick={() => {
-            addTodo()
-          }}>add</button>
+            {buttonText === 'add' ? addTodo() : editTask()}
+          }}>{buttonText}</button>
         </div>
       </div>
       <div className="todo-container">
@@ -75,7 +101,7 @@ function TodoListComponent() {
                 {todo.isDone === true ? <p className='through'>{todo.nameOfTask}</p> : <p>{todo.nameOfTask}</p>}
               </div>
               <div className="right-col">
-                  <img src="../edit.svg" alt="" id='editSvg'/>
+                  <img src="../edit.svg" alt="" id='editSvg' onClick={() => getEdit(todo.id)}/>
                   <img src="../del.svg" alt="" id='delSvg' onClick={() => deleteTask(todo.id)}/>
               </div>
             </div>
