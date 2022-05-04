@@ -2,35 +2,23 @@
   "todos": [
     {
       "id": 1,
-      "nameOfTask": "study mongoDB"
+      "nameOfTask": "study mongoDB",
+      "isDone": false
     },
     {
       "id": 2,
-      "nameOfTask": "study expressJS"
+      "nameOfTask": "study expressJS",
+      "isDone": false
     },
     {
       "id": 3,
-      "nameOfTask": "study reactJS"
+      "nameOfTask": "study reactJS",
+      "isDone": false
     },
     {
       "id": 4,
-      "nameOfTask": "study nodeJS"
-    },
-    {
-      "nameOfTask": "ncie one",
-      "id": 5
-    },
-    {
-      "nameOfTask": "go sleep",
-      "id": 6
-    },
-    {
-      "nameOfTask": "eat kitchen",
-      "id": 7
-    },
-    {
-      "nameOfTask": "die bitch",
-      "id": 8
+      "nameOfTask": "study nodeJS",
+      "isDone": false
     }
   ]
 }
