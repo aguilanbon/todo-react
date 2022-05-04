@@ -14,7 +14,6 @@
 
 .head-container {
   padding: 1em;
-  border-bottom: 1px solid #383e56;
 }
 
 h1 {
@@ -27,6 +26,8 @@ h1 {
 .input-container {
   display: flex;
   flex-direction: row;
+  border-bottom: 1px solid #383e56;
+  padding-bottom: 1em;
 }
 
 #textInput {
@@ -59,7 +60,7 @@ button:hover {
 }
 
 .todo-container {
-  padding: 1em;
+  padding: 0 1em 1em 1em;
   color: #383e56;
 }
 
