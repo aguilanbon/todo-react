@@ -1,13 +1,11 @@
-React Todo App using json-server
+A simple React Todo App using json-server
 
-## Available Scripts
-
-In the project directory, you can run:
+with fully functional CRUD method
 
 ### `npm install`
-### `npm install -g json-server`
+
+### `npm json-server`
+
+### `npm dbon`
 
 ### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
