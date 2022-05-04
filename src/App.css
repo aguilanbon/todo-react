@@ -18,7 +18,7 @@
 
 h1 {
   font-size: 2em;
-  margin-bottom: 1em;
+  margin-bottom: .25em;
   font-family: 'Lobster', cursive;
   color: #383e56;
 }
@@ -105,6 +105,19 @@ p {
   margin-left: 1em;
   cursor: pointer;
   opacity: .8;
+  padding-right: .25em;
+}
+
+#delSvg:hover {
+  height: .8em;
+}
+
+#editSvg:hover{
+  height: .8em;
+}
+
+.through {
+  text-decoration: line-through;
 }
 
 @media only screen and (max-width: 768px) {
