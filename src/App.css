@@ -43,7 +43,7 @@ h1 {
 	border: 1px solid #f69e7b;
 }
 
-button {
+#submit {
   width: 30%;
   background-color: #f69e7b;
 	border: 0px;
@@ -54,7 +54,7 @@ button {
   font-family: 'Lobster', cursive;
 }
 
-button:hover {
+#submit:hover {
   cursor: pointer;
 	background-color: #ec7546;
 }
@@ -121,6 +121,18 @@ p {
 
 .through {
   text-decoration: line-through;
+  color: #ec7546;
+}
+
+.done {
+  background-color: #ffffff;
+	border: 0;
+  cursor: pointer;
+}
+
+.done:hover {
+  cursor: pointer;
+  border-bottom: 1px solid #ec7546;
 }
 
 @media only screen and (max-width: 768px) {

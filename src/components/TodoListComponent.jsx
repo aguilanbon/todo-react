@@ -73,8 +73,8 @@ function TodoListComponent() {
       }
     }
 
-    const getTask = () => {
-      fetch('http://localhost:3001/todos').then(res => res.json()).then(data => setTodos(data))
+    const getTask = async () => {
+      await fetch('http://localhost:3001/todos').then(res => res.json()).then(data => setTodos(data))
     }
 
     useEffect(() => {
@@ -88,17 +88,32 @@ function TodoListComponent() {
           <h1>Todo App</h1>
         <div className="input-container">
           <input type="text" id='textInput' placeholder='add new task...' value={nameOfTask} onChange={(e) => setnameOfTask(e.target.value)} onKeyUp={handleKeyPress}/>
-          <button onClick={() => {
-            {buttonText === 'add' ? addTodo() : editTask()}
-          }}>{buttonText}</button>
+          <button id='submit' onClick={() => {
+            buttonText === 'add' ? addTodo() : editTask()}
+          }>{buttonText}</button>
         </div>
       </div>
       <div className="todo-container">
         {todos.map(todo => (
             <div key={todo.id} className="todo-list">
               <div className="left-col">
-                <input type="checkbox" name="" id="todoCheckbox" value={todo.id} onChange={(e) => checkTask(e.target.value)} />
-                {todo.isDone === true ? <p className='through'>{todo.nameOfTask}</p> : <p>{todo.nameOfTask}</p>}
+                {todo.isDone === true ?
+                <>
+                {/* <input type="checkbox" name="" id="todoCheckbox" value={todo.id} onChange={(e) => checkTask(e.target.value)} checked/> */}
+                <button className='done done-through' value={todo.id} onClick={(e) => checkTask(e.target.value)}>
+                  ✅
+                </button>
+                <p className='through'>{todo.nameOfTask}</p>
+                </>
+                 : 
+                <>
+                {/* <input type="checkbox" name="" id="todoCheckbox" value={todo.id} onChange={(e) => checkTask(e.target.value)} /> */}
+                <button className='done' value={todo.id} onClick={(e) => checkTask(e.target.value)}>
+                  🕘
+                </button>
+                <p>{todo.nameOfTask}</p>
+                </>
+                 }
               </div>
               <div className="right-col">
                   <img src="../edit.svg" alt="" id='editSvg' onClick={() => getEdit(todo.id)}/>
