@@ -48,7 +48,7 @@ function TodoListComponent() {
       <div className='head-container'>
           <h1>Todo App</h1>
         <div className="input-container">
-          <input type="text" id='textInput' value={nameOfTask} onChange={(e) => setnameOfTask(e.target.value)}/>
+          <input type="text" id='textInput' placeholder='add new task...' value={nameOfTask} onChange={(e) => setnameOfTask(e.target.value)}/>
           <button onClick={() => {
             addTodo()
           }}>add</button>
