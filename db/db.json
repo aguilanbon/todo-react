@@ -13,12 +13,17 @@
     {
       "id": 3,
       "nameOfTask": "study reactJS",
-      "isDone": false
+      "isDone": true
     },
     {
       "id": 4,
       "nameOfTask": "study nodeJS",
       "isDone": false
+    },
+    {
+      "id": 5,
+      "nameOfTask": "responsive pages",
+      "isDone": true
     }
   ]
 }
