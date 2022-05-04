@@ -13,7 +13,7 @@
     {
       "id": 3,
       "nameOfTask": "study reactJS",
-      "isDone": true
+      "isDone": false
     },
     {
       "id": 4,
@@ -21,8 +21,8 @@
       "isDone": false
     },
     {
-      "id": 5,
-      "nameOfTask": "responsive pages",
+      "id": 6,
+      "nameOfTask": "cook dinner",
       "isDone": true
     }
   ]
